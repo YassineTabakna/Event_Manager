@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/navy_dark"
+    android:orientation="vertical"
+    android:paddingHorizontal="28dp"
+    android:paddingTop="60dp">
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EVENT MANAGER"
+        android:textColor="@color/gold"
+        android:textSize="11sp"
+        android:letterSpacing="0.15"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Avatar circle -->
+    <TextView
+        android:id="@+id/tvAvatar"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="@drawable/bg_button_gold"
+        android:gravity="center"
+        android:textColor="@color/navy_dark"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome back,"
+        android:textColor="@color/white_60"
+        android:textSize="15sp"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tvWelcomeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp"/>
+
+    <!-- Info Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_input"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="ACCOUNT INFO" android:textColor="@color/gold"
+            android:textSize="11sp" android:letterSpacing="0.12"
+            android:textStyle="bold" android:layout_marginBottom="16dp"/>
+
+        <TextView android:id="@+id/tvEmail"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="@color/white_60" android:textSize="14sp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView android:id="@+id/tvUsername"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="@color/white_60" android:textSize="14sp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView android:id="@+id/tvDob"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="@color/white_60" android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <!-- Logout -->
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@drawable/bg_button_outline"
+        android:text="SIGN OUT"
+        android:textColor="@color/gold"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.08"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

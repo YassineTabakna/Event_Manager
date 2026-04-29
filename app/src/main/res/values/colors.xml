@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navy_dark">#0A0E1A</color>
+    <color name="navy_mid">#111827</color>
+    <color name="navy_card">#1A2236</color>
+    <color name="gold">#C9A84C</color>
+    <color name="gold_light">#E8C96A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="error_red">#FF5252</color>
+    <color name="success_green">#4CAF50</color>
+    <color name="strength_weak">#FF5252</color>
+    <color name="strength_medium">#FFA000</color>
+    <color name="strength_strong">#4CAF50</color>
+</resources>
