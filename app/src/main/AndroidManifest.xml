@@ -22,6 +22,8 @@
 
         <activity android:name=".ui.login.RegisterActivity"/>
         <activity android:name=".ui.home.HomeActivity"/>
+        <activity android:name=".ui.home.CategoryEventsActivity"/>
+        <activity android:name=".ui.home.ProfileActivity"/>
     </application>
 
 </manifest>

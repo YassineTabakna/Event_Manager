@@ -3,6 +3,7 @@ package com.example.eventmanager.data.repositories;
 import com.example.eventmanager.data.local.dao.UserDao;
 import com.example.eventmanager.data.local.entities.User;
 
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -39,11 +40,26 @@ public class UserRepository {
 
     public void login(String email, String password, Callback<User> callback) {
         executor.execute(() -> {
+            // ADD THESE LOGS
+            List<User> allUsers = userDao.getAllUsers();
+            android.util.Log.d("LOGIN_DEBUG", "Total users in DB: " + allUsers.size());
+            for (User u : allUsers) {
+                android.util.Log.d("LOGIN_DEBUG", "User found: " + u.email);
+            }
+            android.util.Log.d("LOGIN_DEBUG", "Trying to login with: " + email);
+
             User user = userDao.getUserByEmail(email);
+            android.util.Log.d("LOGIN_DEBUG", "getUserByEmail result: " + (user == null ? "NULL" : user.email));
+
             if (user == null) {
                 callback.onResult(null, "Email introuvable");
                 return;
             }
+            //User user = userDao.getUserByEmail(email);
+            /*if (user == null) {
+                callback.onResult(null, "Email introuvable");
+                return;
+            }*/
             boolean match = BCrypt.verifyer()
                     .verify(password.toCharArray(), user.password)
                     .verified;

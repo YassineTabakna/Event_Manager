@@ -1,93 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/navy_dark"
-    android:orientation="vertical"
-    android:paddingHorizontal="28dp"
-    android:paddingTop="60dp">
+    android:background="@color/navy_dark">
 
-    <!-- Header -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EVENT MANAGER"
-        android:textColor="@color/gold"
-        android:textSize="11sp"
-        android:letterSpacing="0.15"
-        android:textStyle="bold"
-        android:layout_marginBottom="32dp"/>
-
-    <!-- Avatar circle -->
-    <TextView
-        android:id="@+id/tvAvatar"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:background="@drawable/bg_button_gold"
-        android:gravity="center"
-        android:textColor="@color/navy_dark"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome back,"
-        android:textColor="@color/white_60"
-        android:textSize="15sp"
-        android:layout_marginBottom="4dp"/>
-
-    <TextView
-        android:id="@+id/tvWelcomeName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="40dp"/>
-
-    <!-- Info Card -->
+    <!-- TOP BAR -->
     <LinearLayout
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_input"
-        android:orientation="vertical"
-        android:padding="20dp"
-        android:layout_marginBottom="16dp">
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:background="@color/navy_dark">
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="ACCOUNT INFO" android:textColor="@color/gold"
-            android:textSize="11sp" android:letterSpacing="0.12"
-            android:textStyle="bold" android:layout_marginBottom="16dp"/>
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_manage"
+            app:tint="@color/white" />
 
-        <TextView android:id="@+id/tvEmail"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:textColor="@color/white_60" android:textSize="14sp"
-            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:id="@+id/tvFragmentTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Categories"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
-        <TextView android:id="@+id/tvUsername"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:textColor="@color/white_60" android:textSize="14sp"
-            android:layout_marginBottom="8dp"/>
-
-        <TextView android:id="@+id/tvDob"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:textColor="@color/white_60" android:textSize="14sp"/>
+        <ImageButton
+            android:id="@+id/btnSearch"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_search"
+            app:tint="@color/white" />
 
     </LinearLayout>
 
-    <!-- Logout -->
-    <Button
-        android:id="@+id/btnLogout"
+    <!-- SEARCH BAR (hidden by default) -->
+    <EditText
+        android:id="@+id/etSearch"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:background="@drawable/bg_button_outline"
-        android:text="SIGN OUT"
-        android:textColor="@color/gold"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:letterSpacing="0.08"
-        android:layout_marginTop="16dp"/>
+        android:layout_height="48dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/bg_input"
+        android:hint="Search..."
+        android:textColor="@color/white"
+        android:paddingHorizontal="16dp"
+        android:visibility="gone"
+        android:layout_marginHorizontal="16dp"/>
 
-</LinearLayout>
+    <!-- FRAGMENTS CONTAINER -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="64dp"/>
+
+    <!-- BOTTOM TAB BAR -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_gravity="bottom"
+        android:background="@color/navy_card"
+        android:orientation="horizontal">
+
+        <ImageButton android:id="@+id/tabCategories"
+            android:layout_width="0dp" android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_gallery"
+            app:tint="@color/gold" />
+
+        <ImageButton android:id="@+id/tabPending"
+            android:layout_width="0dp" android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_recent_history"
+            app:tint="@color/white_60" />
+
+        <ImageButton android:id="@+id/tabUpcoming"
+            android:layout_width="0dp" android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_my_calendar"
+            app:tint="@color/white_60" />
+
+        <ImageButton android:id="@+id/tabMyEvents"
+            android:layout_width="0dp" android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_edit"
+            app:tint="@color/white_60" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

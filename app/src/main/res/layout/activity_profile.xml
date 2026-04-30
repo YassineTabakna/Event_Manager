@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/navy_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="28dp"
+        android:paddingTop="60dp"
+        android:paddingBottom="40dp">
+
+        <!-- Back -->
+        <TextView
+            android:id="@+id/tvBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Back"
+            android:textColor="@color/gold"
+            android:textSize="14sp"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Avatar -->
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="32dp">
+
+            <TextView
+                android:id="@+id/tvAvatar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/bg_button_gold"
+                android:gravity="center"
+                android:textColor="@color/navy_dark"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/tvFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Section: Account info -->
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACCOUNT INFO"
+            android:textColor="@color/gold"
+            android:textSize="11sp"
+            android:letterSpacing="0.12"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Editable fields -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="FIRST NAME" android:textColor="@color/gold"
+            android:textSize="11sp" android:letterSpacing="0.12"
+            android:textStyle="bold" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/etPrenom"
+            android:layout_width="match_parent" android:layout_height="54dp"
+            android:background="@drawable/bg_input" android:textColor="@color/white"
+            android:paddingHorizontal="16dp" android:layout_marginBottom="16dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="LAST NAME" android:textColor="@color/gold"
+            android:textSize="11sp" android:letterSpacing="0.12"
+            android:textStyle="bold" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/etNom"
+            android:layout_width="match_parent" android:layout_height="54dp"
+            android:background="@drawable/bg_input" android:textColor="@color/white"
+            android:paddingHorizontal="16dp" android:layout_marginBottom="16dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="USERNAME" android:textColor="@color/gold"
+            android:textSize="11sp" android:letterSpacing="0.12"
+            android:textStyle="bold" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/etUsername"
+            android:layout_width="match_parent" android:layout_height="54dp"
+            android:background="@drawable/bg_input" android:textColor="@color/white"
+            android:paddingHorizontal="16dp" android:layout_marginBottom="16dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="EMAIL" android:textColor="@color/gold"
+            android:textSize="11sp" android:letterSpacing="0.12"
+            android:textStyle="bold" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/etEmail"
+            android:layout_width="match_parent" android:layout_height="54dp"
+            android:background="@drawable/bg_input" android:textColor="@color/white"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="16dp" android:layout_marginBottom="16dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="DATE OF BIRTH" android:textColor="@color/gold"
+            android:textSize="11sp" android:letterSpacing="0.12"
+            android:textStyle="bold" android:layout_marginBottom="6dp"/>
+        <EditText android:id="@+id/etDob"
+            android:layout_width="match_parent" android:layout_height="54dp"
+            android:background="@drawable/bg_input" android:textColor="@color/white"
+            android:paddingHorizontal="16dp" android:layout_marginBottom="24dp"/>
+
+        <!-- Save button -->
+        <Button android:id="@+id/btnSave"
+            android:layout_width="match_parent" android:layout_height="54dp"
+            android:background="@drawable/bg_button_gold"
+            android:text="SAVE CHANGES"
+            android:textColor="@color/navy_dark"
+            android:textSize="14sp" android:textStyle="bold"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Section: Subscription -->
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUBSCRIPTION"
+            android:textColor="@color/gold"
+            android:textSize="11sp"
+            android:letterSpacing="0.12"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"/>
+
+        <LinearLayout
+            android:id="@+id/cardSubscription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_marginBottom="32dp">
+
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView android:id="@+id/tvPlanName"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" android:textStyle="bold"/>
+
+                <TextView android:id="@+id/tvPlanBadge"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="11sp" android:textStyle="bold"
+                    android:paddingHorizontal="10dp" android:paddingVertical="4dp"/>
+            </LinearLayout>
+
+            <TextView android:id="@+id/tvPlanDetails"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textColor="@color/white_60" android:textSize="13sp"
+                android:lineSpacingExtra="4dp"/>
+        </LinearLayout>
+
+        <!-- Logout -->
+        <Button android:id="@+id/btnLogout"
+            android:layout_width="match_parent" android:layout_height="54dp"
+            android:background="@drawable/bg_button_outline"
+            android:text="SIGN OUT"
+            android:textColor="@color/gold"
+            android:textSize="14sp" android:textStyle="bold"
+            android:letterSpacing="0.08"/>
+
+    </LinearLayout>
+</ScrollView>

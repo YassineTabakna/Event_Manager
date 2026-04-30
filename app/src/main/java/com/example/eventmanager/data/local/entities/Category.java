@@ -7,12 +7,6 @@ import androidx.room.PrimaryKey;
 public class Category {
     @PrimaryKey(autoGenerate = true)
     public int id_category;
-
     public String nom;
     public String description;
-
-    public Category(String nom, String description) {
-        this.nom = nom;
-        this.description = description;
-    }
 }
