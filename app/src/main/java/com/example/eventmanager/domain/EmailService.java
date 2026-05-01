@@ -14,7 +14,7 @@ import okhttp3.Response;
 
 public class EmailService {
 
-    private static final String API_KEY = "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";
+    private static final String API_KEY = "API_KEY";
     private static final String API_URL = "https://api.brevo.com/v3/smtp/email";
 
     private final OkHttpClient client = new OkHttpClient();
