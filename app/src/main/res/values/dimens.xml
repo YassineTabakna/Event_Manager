@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Your global screen padding -->
+    <dimen name="screen_padding_top">20dp</dimen>
+    <dimen name="screen_padding_bottom">20dp</dimen>
+
+    <!-- You can add a side padding here too if you want! -->
+    <dimen name="screen_padding_horizontal">16dp</dimen>
+</resources>

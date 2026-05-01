@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F172A"
+    android:padding="16dp"
+    android:paddingTop="@dimen/screen_padding_top"
+    android:paddingBottom="@dimen/screen_padding_bottom">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Title"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_detail_date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📅 Date | 🕐 Time"
+            android:textColor="#A0AEC0"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_detail_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📍 Location"
+            android:textColor="#A0AEC0"
+            android:textSize="14sp"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:id="@+id/tv_detail_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event description goes here..."
+            android:textColor="#E2E8F0"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:id="@+id/tv_detail_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price: Free"
+            android:textColor="#D4AF37"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Replace your existing btn_attend with this block -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#FF4C4C"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:text="CANCEL TICKET"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_attend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#D4AF37"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:text="ATTEND EVENT" />
+
+    </LinearLayout>
+
+</RelativeLayout>

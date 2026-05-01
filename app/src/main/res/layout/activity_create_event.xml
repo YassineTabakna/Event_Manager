@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F172A"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create New Event"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
+
+        <EditText
+            android:id="@+id/et_event_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_input"
+            android:hint="Event Title"
+            android:textColorHint="#A0AEC0"
+            android:textColor="@android:color/white"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Dropdown for Categories -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Category"
+            android:textColor="#A0AEC0"
+            android:layout_marginBottom="4dp"/>
+
+        <Spinner
+            android:id="@+id/spinner_category"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_input"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/et_event_desc"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/bg_input"
+            android:hint="Description"
+            android:gravity="top|start"
+            android:textColorHint="#A0AEC0"
+            android:textColor="@android:color/white"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/et_event_date"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input"
+                android:hint="YYYY-MM-DD"
+                android:textColorHint="#A0AEC0"
+                android:textColor="@android:color/white"
+                android:paddingHorizontal="16dp"
+                android:layout_marginEnd="8dp"/>
+
+            <EditText
+                android:id="@+id/et_event_time"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input"
+                android:hint="HH:MM (24h)"
+                android:textColorHint="#A0AEC0"
+                android:textColor="@android:color/white"
+                android:paddingHorizontal="16dp"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_event_location"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_input"
+            android:hint="Location"
+            android:textColorHint="#A0AEC0"
+            android:textColor="@android:color/white"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/et_event_duration_hrs"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input"
+                android:hint="Duration (Hours)"
+                android:inputType="number"
+                android:textColorHint="#A0AEC0"
+                android:textColor="@android:color/white"
+                android:paddingHorizontal="16dp"
+                android:layout_marginEnd="8dp"/>
+
+            <EditText
+                android:id="@+id/et_event_max_tickets"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_input"
+                android:hint="Max Tickets"
+                android:inputType="number"
+                android:textColorHint="#A0AEC0"
+                android:textColor="@android:color/white"
+                android:paddingHorizontal="16dp"/>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_is_paid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Is this a paid event?"
+            android:textColor="@android:color/white"
+            android:theme="@style/Theme.AppCompat.DayNight"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/et_event_price"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_input"
+            android:hint="Price (MAD)"
+            android:inputType="numberDecimal"
+            android:textColorHint="#A0AEC0"
+            android:textColor="@android:color/white"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="24dp"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btn_publish_event"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="#D4AF37"
+            android:text="PUBLISH EVENT"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

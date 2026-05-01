@@ -24,6 +24,12 @@
         <activity android:name=".ui.home.HomeActivity"/>
         <activity android:name=".ui.home.CategoryEventsActivity"/>
         <activity android:name=".ui.home.ProfileActivity"/>
+
+        <activity android:name=".ui.home.EventDetailActivity" />
+
+        <activity android:name=".ui.home.CreateEventActivity" />
+        <activity android:name=".ui.home.ManageEventActivity" />
+
     </application>
 
 </manifest>

@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/navy_dark"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:paddingTop="@dimen/screen_padding_top"
+    android:paddingBottom="@dimen/screen_padding_bottom">
 
     <LinearLayout
         android:layout_width="match_parent"

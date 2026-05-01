@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0F172A"
+    android:paddingTop="@dimen/screen_padding_top"
+    android:paddingBottom="@dimen/screen_padding_bottom"
+    android:paddingHorizontal="16dp">
+
+    <TextView
+        android:id="@+id/tv_manage_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_manage_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#A0AEC0"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btn_cancel_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF4C4C"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:text="CANCEL ENTIRE EVENT"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ATTENDEE REQUESTS"
+        android:textColor="#D4AF37"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.1"
+        android:layout_marginBottom="8dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_attendees"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"/>
+
+</LinearLayout>

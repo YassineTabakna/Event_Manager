@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData;
 import com.example.eventmanager.data.local.dao.AchatDao;
 import com.example.eventmanager.data.local.dao.EventDao;
 import com.example.eventmanager.data.local.entities.Event;
+import com.example.eventmanager.data.local.entities.PendingEvent;
+
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -20,7 +22,7 @@ public class EventRepository {
         return eventDao.getEventsByUser(userId);
     }
 
-    public LiveData<List<Event>> getPendingEvents(int userId) {
+    public LiveData<List<PendingEvent>> getPendingEvents(int userId) {
         return achatDao.getPendingEvents(userId);
     }
 

@@ -15,6 +15,7 @@ import com.example.eventmanager.R;
 import com.example.eventmanager.data.local.AppDatabase;
 import com.example.eventmanager.data.local.entities.Category;
 import com.example.eventmanager.domain.CategoryRepository;
+import com.example.eventmanager.domain.SessionManager;
 import com.example.eventmanager.ui.home.Searchable;
 import com.example.eventmanager.ui.home.adapters.CategoryAdapter;
 
@@ -23,16 +24,21 @@ import java.util.List;
 
 public class CategoriesFragment extends Fragment implements Searchable {
 
-    private final int userId;
+    private int userId;
     private CategoryAdapter adapter;
     private CategoryRepository repo;
 
-    public CategoriesFragment(int userId) { this.userId = userId; }
+    public CategoriesFragment() {
+        // Required empty public constructor
+    }
 
     @Nullable @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_categories, container, false);
+
+        SessionManager sessionManager = new SessionManager(requireContext());
+        userId = sessionManager.getUserId(); // Grabbed safely, even if not strictly needed here yet
 
         RecyclerView rv = view.findViewById(R.id.rvCategories);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));

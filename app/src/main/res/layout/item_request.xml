@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_input"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="8dp"
+    android:paddingTop="@dimen/screen_padding_top"
+    android:paddingBottom="@dimen/screen_padding_bottom">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvAttendeeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvAttendeeStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#A0AEC0"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <!-- Accept Button -->
+    <TextView
+        android:id="@+id/btnAccept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ACCEPT"
+        android:textColor="#4CAF50"
+    android:textStyle="bold"
+    android:padding="8dp"
+    android:layout_marginEnd="8dp"/>
+
+    <!-- Reject/Remove Button -->
+    <TextView
+        android:id="@+id/btnReject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="❌"
+        android:textColor="#FF4C4C"
+        android:padding="8dp"/>
+
+</LinearLayout>

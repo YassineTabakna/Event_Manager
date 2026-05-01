@@ -18,4 +18,12 @@ public interface EventDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     long insertEvent(Event event);
+
+    // Delete the entire event
+    @Query("DELETE FROM event WHERE id_event = :eventId")
+    void deleteEvent(int eventId);
+
+    // Fetch a single event by its ID
+    @Query("SELECT * FROM event WHERE id_event = :eventId LIMIT 1")
+    LiveData<Event> getEventById(int eventId);
 }

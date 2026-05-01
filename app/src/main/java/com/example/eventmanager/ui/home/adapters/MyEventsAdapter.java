@@ -47,7 +47,9 @@ public class MyEventsAdapter extends ListAdapter<Event, MyEventsAdapter.VH> {
         }
 
         holder.itemView.setOnClickListener(v -> {
-            // Navigate to manage event (later)
+            android.content.Intent intent = new android.content.Intent(v.getContext(), com.example.eventmanager.ui.home.ManageEventActivity.class);
+            intent.putExtra("event_id", event.id_event);
+            v.getContext().startActivity(intent);
         });
     }
 

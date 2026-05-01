@@ -1,23 +1,26 @@
 package com.example.eventmanager.ui.home.adapters;
 
+import android.content.Intent;
 import android.view.*;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.eventmanager.R;
-import com.example.eventmanager.data.local.entities.Event;
 
-public class PendingAdapter extends ListAdapter<Event, PendingAdapter.VH> {
+import com.example.eventmanager.R;
+import com.example.eventmanager.data.local.entities.PendingEvent;
+import com.example.eventmanager.ui.home.EventDetailActivity;
+
+public class PendingAdapter extends ListAdapter<PendingEvent, PendingAdapter.VH> {
 
     public PendingAdapter() {
-        super(new DiffUtil.ItemCallback<Event>() {
-            public boolean areItemsTheSame(@NonNull Event a, @NonNull Event b) {
-                return a.id_event == b.id_event;
+        super(new DiffUtil.ItemCallback<PendingEvent>() {
+            public boolean areItemsTheSame(@NonNull PendingEvent a, @NonNull PendingEvent b) {
+                return a.event.id_event == b.event.id_event;
             }
-            public boolean areContentsTheSame(@NonNull Event a, @NonNull Event b) {
-                return a.titre.equals(b.titre);
+            public boolean areContentsTheSame(@NonNull PendingEvent a, @NonNull PendingEvent b) {
+                return a.event.titre.equals(b.event.titre) && a.date_achat.equals(b.date_achat);
             }
         });
     }
@@ -31,14 +34,19 @@ public class PendingAdapter extends ListAdapter<Event, PendingAdapter.VH> {
 
     @Override
     public void onBindViewHolder(@NonNull VH holder, int position) {
-        Event event = getItem(position);
-        holder.tvName.setText(event.titre);
-        holder.tvEventDate.setText("📅 Event date : " + event.date);
-        // Applied date comes from achat — placeholder for now
-        holder.tvApplied.setText("🕐 Applied on : " + event.date);
+        PendingEvent pendingItem = getItem(position);
+
+        holder.tvName.setText(pendingItem.event.titre);
+        holder.tvEventDate.setText("📅 Event date : " + pendingItem.event.date);
+
+        // The placeholder is fixed!
+        holder.tvApplied.setText("🕐 Applied on : " + pendingItem.date_achat);
 
         holder.itemView.setOnClickListener(v -> {
-            // Navigate to event details (later)
+            // Navigate to event details
+            Intent intent = new Intent(v.getContext(), EventDetailActivity.class);
+            intent.putExtra("event_id", pendingItem.event.id_event);
+            v.getContext().startActivity(intent);
         });
     }
 

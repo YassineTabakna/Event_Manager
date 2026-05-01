@@ -90,13 +90,13 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         // Tabs
-        tabCategories.setOnClickListener(v -> showFragment(new CategoriesFragment(userId), "Categories"));
-        tabPending.setOnClickListener(v    -> showFragment(new PendingFragment(userId),    "Requests"));
-        tabUpcoming.setOnClickListener(v   -> showFragment(new UpcomingFragment(userId),   "My Tickets"));
-        tabMyEvents.setOnClickListener(v   -> showFragment(new MyEventsFragment(userId),   "My Events"));
+        tabCategories.setOnClickListener(v -> showFragment(new CategoriesFragment(), "Categories"));
+        tabPending.setOnClickListener(v    -> showFragment(new PendingFragment(),    "Requests"));
+        tabUpcoming.setOnClickListener(v   -> showFragment(new UpcomingFragment(),   "My Tickets"));
+        tabMyEvents.setOnClickListener(v   -> showFragment(new MyEventsFragment(),   "My Events"));
 
         // Default tab
-        showFragment(new CategoriesFragment(userId), "Categories");
+        showFragment(new CategoriesFragment(), "Categories");
     }
 
     private void showFragment(Fragment fragment, String title) {
