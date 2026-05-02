@@ -17,9 +17,13 @@ import com.example.eventmanager.ui.home.HomeActivity;
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel viewModel;
-        // XML -> Activty(View) -> ViewModel -> repository -> Dao -> Entity
+
+    // XML -> Activty(View) -> ViewModel -> repository -> Dao -> Entity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // 1. THIS MUST BE THE VERY FIRST LINE!
+        super.onCreate(savedInstanceState);
+
         // If already logged in → go directly to Home
         SessionManager session = new SessionManager(this);
         if (session.isLoggedIn()) {
@@ -30,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
@@ -54,14 +57,16 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(this, RegisterActivity.class))
         );
 
-        // REPLACE the loginResult observer
+        // --- THE CRASH FIX IS HERE ---
         viewModel.loginResult.observe(this, user -> {
-            session.saveSession(user.id_user); // ← ADD this line
-            Intent intent = new Intent(this, HomeActivity.class);
-            intent.putExtra("user_id", user.id_user);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
+            if (user != null) { // This prevents the app from crashing on a failed login!
+                session.saveSession(user.id_user);
+                Intent intent = new Intent(this, HomeActivity.class);
+                intent.putExtra("user_id", user.id_user);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+            }
         });
 
         viewModel.errorMessage.observe(this, msg ->

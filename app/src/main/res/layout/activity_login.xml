@@ -15,17 +15,13 @@
         android:paddingTop="80dp"
         android:paddingBottom="40dp">
 
-        <!-- Logo / Icon -->
-        <TextView
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:background="@drawable/bg_button_gold"
-            android:gravity="center"
-            android:text="E"
-            android:textColor="@color/navy_dark"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="32dp"/>
+        <!-- Logo / Icon (Replaced the TextView with an ImageView) -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:scaleType="fitCenter"
+            android:layout_marginBottom="32dp" />
 
         <!-- Title -->
         <TextView
